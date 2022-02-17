@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<!--
+IMPORTANT:
+Start from the previous Musical assignment project you've created on M2-D2
+    
+ASSIGNMENT RULES
+- The project must be pushed to a new repository and linked in EduFlow by the end of the day.
+- You can google / use StackOverflow BUT we suggest you to use just the material provided and documentation.
+- To test the page, open it with your browser and inspect it with developer tools / device emulator.
+- Use Bootstrap4.6 classes to create the page.
+- Use containers, rows and cols in order to achieve a great responsive layout.
+
+NOTE:
+Most of the requirements in this exercises reference a bootstrap's functionality or component. 
+Make sure you check the documentation before creting anything custom.
+-->
+
+<html>
+  <head>
+    <!-- IMPORT ALL THE BOOSTRAP RELATED CSS & SCRIPTS-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      .sidebar {
+        margin: 0;
+        padding: 0;
+        width: 200px;
+        background-color: #f1f1f1;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
+      }
+
+      .sidebar a {
+        display: block;
+        color: black;
+        padding: 16px;
+        text-decoration: none;
+      }
+
+      .sidebar a.active {
+        background-color: #555;
+        color: white;
+      }
+
+      .sidebar a:hover:not(.active) {
+        background-color: #555;
+        color: white;
+      }
+
+      div.content {
+        margin-left: 200px;
+        padding: 1px 16px;
+        height: 1000px;
+      }
+
+      #footer {
+        max-height: 20%;
+      }
+
+      @media (min-width: 576px) {
+      }
+      .box1 {
+        margin-left: 150px !important;
+      }
+      .jumbotron {
+        animation: fadeIn 2s;
+      }
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .des1,
+      .des2,
+      .des3 {
+        opacity: 0;
+        transition: opacity 1s;
+      }
+
+      .card1:hover .des1 {
+        opacity: 1;
+      }
+      @keyframes display {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+        0% {
+          opacity: 0;
+        }
+      }
+      .card2:hover .des2 {
+        opacity: 1;
+      }
+      @keyframes display {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+        0% {
+          opacity: 0;
+        }
+      }
+      .card3:hover .des3 {
+        opacity: 1;
+      }
+      @keyframes display {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+        0% {
+          opacity: 0;
+        }
+      }
+
+      .banner {
+        position: absolute;
+        transform: translateX(-280px);
+        height: 70px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <!-- IMPORT ALL THE BOOTSTRAP RELATED CSS & SCRIPTS-->
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+          crossorigin="anonymous"
+        />
+
+        <style></style>
+        <nav class="navbar navbar-light" style="background-color: #171718">
+          <div class="container">
+            <a class="navbar-brand text-light" href="#">
+              <img
+                src="https://www.freepnglogos.com/uploads/apple-music-logo-circle-png-28.png"
+                alt=""
+                width="30"
+                height="24"
+              />
+              Visual Music</a
+            >
+            <ul class="nav">
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-light"
+                  aria-current="page"
+                  href="#"
+                  >Active</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#">About</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </head>
+
+      <body>
+        <div class="sidebar" style="background-color: #171718">
+          <a class="active" href="#home">Home</a>
+          <a href="#news" class="text-light">Active</a>
+          <a href="#contact" class="text-light">Contact</a>
+          <a href="#about" class="text-light">About</a>
+        </div>
+
+        <div class="container">
+          <div class="box1 row">
+            <div class="jumbotron shadow-lg ml-4">
+              <img
+                class="logo"
+                width="80"
+                src="https://www.freepnglogos.com/uploads/apple-music-logo-circle-png-28.png"
+                alt=""
+              />
+              <h1 class="display-4">Visual Music</h1>
+              <p class="lead">
+                The new platform to keep track of all your music, and comunicate
+                with producers all over the world.
+              </p>
+
+              <hr class="my-4" />
+              <p>
+                Discover how to engage with top class performers around the
+                world.
+              </p>
+              <a class="btn btn-primary btn-lg" href="#" role="button"
+                >Learn more</a
+              >
+            </div>
+            <div class="card1 col-sm-2 cols-md-3 col-lg-4">
+              <img
+                class="img1 img-fluid shadow-lg p-3 mb-4 bg-white rounded"
+                src="https://e.snmc.io/i/1200/s/c240942b24f031f2b867a16d71a3e241/1612455"
+                alt=""
+              />
+              <img class="banner" src="/index.jpg" alt="" />
+              <div class="des1 shadow p-3 mb-5 bg-white rounded" id="des1">
+                <h3>Eminem</h3>
+                <p>The Marshal Mathers LP</p>
+                <p>2004</p>
+              </div>
+            </div>
+            <div class="card2 col-sm-2 cols-md-3 col-lg-4">
+              <img
+                class="img2 img-fluid shadow-lg p-3 mb-3 bg-white rounded"
+                src="https://c8.alamy.com/comp/2FY5XPM/punk-rock-band-paramore-music-album-on-vinyl-record-lp-disc-titled-riot!-album-cover-2FY5XPM.jpg"
+                alt=""
+              />
+              <div class="des2 shadow p-3 mb-5 bg-white rounded">
+                <h3>Paramore</h3>
+                <p>Riot</p>
+                <p>2007</p>
+              </div>
+            </div>
+            <div class="card3 col-sm-2 cols-md-3 col-lg-4">
+              <img
+                class="img3 img-fluid shadow-lg p-3 mb-4 bg-white rounded"
+                src="https://i.scdn.co/image/ab67616d0000b2733b175d94538ad983d1c7d676"
+                alt=""
+              />
+              <div class="des3 shadow p-3 mb-3 bg-white rounded">
+                <h3>Allevi</h3>
+                <p>evolution</p>
+                <p>2008</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- EXERCISE 1
+        Create a Jumbotron section with a quick explanation / image of the website.
+        Make it appear with a fade-in animation effect when the page loads.
+    -->
+
+        <!-- EXERCISE 2
+        Use a Bootstrap Card to contain every album in the favorite list you previously created.
+        Use the elements of a card bootstrap provides you with to display nicely the album informations such as: album title, artist, year, etc..
+    -->
+
+        <!-- EXERCISE 3
+        For every album in the favorite list, attach a badge on the top-left corner of the album with the genre of the music
+    -->
+
+        <!-- EXERCISE 4
+        Create a new section with an album tracklist inside a Bootstrap table.
+        The row colors of the table must be alternated.
+
+        There should be a column for the track order number, one for the title and one for the track duration.
+        (If you want, you can also add extra columns)
+    -->
+
+        <!-- EXERCISE 5
+        Add a DELETE bootstrap button at the end of each row of the tracklist. 
+        Attach the functionality to remove its row when it gets clicked. (Requires DOM manipulation)  
+
+        ## EXTRA CSS CHALLENGE ##
+        Make only one button visible at a time, for each row, when the single row gets hovered. 
+        Animate it with a fade-in effect upon the user hovering and fade-out when he/she goes away from it.
+    -->
+
+        <!-- EXERCISE 6
+        Add an "Add Track" button under the tracklist of the album. 
+        It should have a nice shadow transition when its hovered (with the box-shadow property) 
+        to look like as if the button was elevating itself.
+    -->
+
+        <!-- ############### -->
+        <!-- ###  EXTRA  ### -->
+        <!-- ############### -->
+
+        <!-- EXERCISE 7
+        On the click of "Add Track" button, a modal should appear.
+        (check in the documentation the modal + button example)
+        
+        The modal shall contain single input fields (avoid using a <form> to wrap the inputs) with:
+        - Track number
+        - Track title
+        - Track duration
+
+        The fields should be inside an Input Group and divided in 2 columns.
+    -->
+
+        <!-- EXERCISE 8
+        The modal should contain 2 buttons at the bottom:
+        - Add => Adds a new track in the tracklist with the data of the input fields.
+        - Close => closes the modal
+
+        https://getbootstrap.com/docs/4.6/components/alerts/
+        [EXTRA] Make the message disappear after 5 seconds
+        https://www.w3schools.com/jsref/met_win_settimeout.asp
+    -->
+
+        <!-- EXERCISE 9
+        Alert the user with a success message when the track gets added, or when a track gets deleted.
+     -->
+        <footer
+          id="footer"
+          class="text-center text-white navbar fixed-bottom"
+          style="background-color: #171718"
+        >
+          <div class="container p-4">
+            <section class="">
+              <div class="row">
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                  <div
+                    class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                    data-ripple-color="light"
+                  >
+                    <img
+                      id="footer"
+                      src="https://upload.wikimedia.org/wikipedia/en/c/cb/KDA_ALL_OUT.jpg"
+                      class="w-100"
+                    />
+                    <a href="#!">
+                      <div
+                        class="mask"
+                        style="background-color: rgba(251, 251, 251, 0.2)"
+                      ></div>
+                    </a>
+                  </div>
+                </div>
+                <div
+                  class="col-lg-2 col-md-12 mb-4 mb-md-0"
+                  style="max-height: 80%"
+                >
+                  <div
+                    class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                    data-ripple-color="light"
+                  >
+                    <img
+                      id="footer"
+                      src="https://studiosol-a.akamaihd.net/uploadfile/letras/fotos/1/a/6/b/1a6b4f5d7e7578e6f2463b5201b3d7c1.jpg"
+                      class="w-100"
+                    />
+                    <a href="#!">
+                      <div
+                        class="mask"
+                        style="background-color: rgba(251, 251, 251, 0.2)"
+                      ></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                  <div
+                    class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                    data-ripple-color="light"
+                  >
+                    <img
+                      src="https://media.resources.festicket.com/image/300x300/center/top/filters:quality(70)/www/artists/Gorillaz_New.jpg"
+                      class="w-100"
+                    />
+                    <a href="#!">
+                      <div
+                        class="mask"
+                        style="background-color: rgba(251, 251, 251, 0.2)"
+                      ></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                  <div
+                    class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                    data-ripple-color="light"
+                  >
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/en/4/41/By_The_Way_by_Theory_of_a_Deadman.jpg"
+                      class="w-100"
+                    />
+                    <a href="#!">
+                      <div
+                        class="mask"
+                        style="background-color: rgba(251, 251, 251, 0.2)"
+                      ></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                  <div
+                    class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                    data-ripple-color="light"
+                  >
+                    <img
+                      src="https://m.media-amazon.com/images/I/71Gq22xYufL._AC_SX466_.jpg"
+                      class="w-100"
+                    />
+                    <a href="#!">
+                      <div
+                        class="mask"
+                        style="background-color: rgba(251, 251, 251, 0.2)"
+                      ></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                  <div
+                    class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                    data-ripple-color="light"
+                  >
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRheAC11B-I6MfmrVTNxE7hGODbtxtBIZ_Szw&usqp=CAU"
+                      class="w-100"
+                    />
+                    <a href="#!">
+                      <div
+                        class="mask"
+                        style="background-color: rgba(251, 251, 251, 0.2)"
+                      ></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </footer>
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+          crossorigin="anonymous"
+        ></script>
+      </body>
+    </html>
+  </body>
+</html>
